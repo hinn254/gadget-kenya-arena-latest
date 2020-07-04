@@ -1,0 +1,385 @@
+{% load static %}
+{% load cart_template_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{% block title %}Gadget Arena{% endblock title %}</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Gadget Arena Kenya online phone and accessories shopping">
+<meta name="keywords" content="Gadget, Arena, online, phone, accessory">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+<link rel="stylesheet" type="text/css" href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1565190284/Scripts/xzoom.css" media="all" />
+
+<link href="{% static 'plugins/fontawesome-free-5.0.1/css/fontawesome-all.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Css Styles -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/slick-1.8.0/slick.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+<style>
+	.banner_text, .banner_price, .banner_product_name, .banner_button {
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="super_container">
+	
+	<!-- Header -->
+	
+	<header class="header">
+
+		<!-- Top Bar -->
+
+		<div class="top_bar">
+			<div class="container">
+				<div class="row">
+					<div class="col d-flex flex-row">
+						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{% static 'images/phone.png' %}" alt=""></div>0795827252</div>
+						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{% static 'images/mail.png' %}" alt=""></div><a href="mailto:gadgetarena.g3@gmail.com">gadgetarena.g3@gmail.com</a></div>
+					</div>
+				</div>
+			</div>		
+		</div>
+
+		<!-- Header Main -->
+
+		<div class="header_main">
+			<div class="container">
+				<div class="row">
+
+					<!-- Logo -->
+					<div class="col-lg-2 col-sm-3 col-3 order-1">
+						<div class="logo_container">
+							<div class="logo"><a href="#"><img src="{% static 'img/logo.jpeg' %}" alt=""></a>
+                            </div>
+						</div>
+					</div>
+
+					<!-- Search -->
+					<div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+						<div class="header_search">
+							<div class="header_search_content">
+								<div class="header_search_form_container">
+									<form method='GET' action="{% url 'core:search-results' %}" class="header_search_form clearfix">
+										<input name='q'type="text" required="required" class="header_search_input" placeholder="Search for products...">
+										<div class="custom_dropdown">
+											<div class="custom_dropdown_list">
+												<span class="custom_dropdown_placeholder clc">All Categories</span>
+												<i class="fas fa-chevron-down"></i>
+												<ul class="custom_list clc">
+                                                    <li><a href="{% url 'core:oppo-search-results' %}">Oppo</a></li>
+                                                    <li><a href="{% url 'core:nokia-search-results' %}">Nokia</a></li>
+                                                    <li><a href="{% url 'core:samsung-search-results' %}">Samsung</a></li>
+                                                    <li><a href="{% url 'core:itel-search-results' %}">Itel</a></li>
+                                                    <li><a href="{% url 'core:iphone-search-results' %}">iPhone</a></li>
+                                                    <li><a href="{% url 'core:tecno-search-results' %}">Tecno</a></li>
+                                                    <li><a href="{% url 'core:infinix-search-results' %}">Infinix</a></li>
+                                                    <li><a href="{% url 'core:oneplus-search-results' %}">One Plus</a></li>
+                                                    <li><a href="{% url 'core:huawei-search-results' %}">Huawei</a></li>
+                                                    <li><a href="{% url 'core:realme-search-results' %}">RealMe</a></li>
+                                                    <li><a href="{% url 'core:vivo-search-results' %}">Vivo</a></li>
+                                                    <li><a href="{% url 'core:redmi-search-results' %}">Redmi</a></li>
+                                                    <li><a href="{% url 'core:tablet-search-results' %}">Tablets</a></li>
+                                                    <li><a href="{% url 'core:accessory-search-results' %}">Accessories</a></li>
+                                                    <li><a href="{% url 'core:computer-search-results' %}">Computers</a></li>
+
+												</ul>
+											</div>
+										</div>
+										<button type="submit" class="header_search_button trans_300" value="Submit"><img src="{% static 'images/search.png' %}" alt=""></button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Wishlist -->
+					<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+						<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
+							<!-- Cart -->
+                            {% if request.user.is_authenticated %}
+                            <div class="header__cart">
+                                <ul>
+                                    <li><a href="{% url 'core:order-summary' %}"><i class="fa fa-shopping-bag"></i> <span>{{ request.user|cart_item_count }}</span></a></li>
+                                    <li><a href="{% url 'account_logout' %}"><i class="fa fa-user"></i> Logout</a></li>
+                                </ul>
+                                                  
+                            </div>
+                            {% else %}
+                              <div class="header__cart">
+                                <ul>
+                                    <li><a href="{% url 'account_signup' %}"><i class="fa fa-user"></i>Sign Up</a></li>
+                                    <li><a href="{% url 'account_login' %}"><i class="fa fa-user"></i> Login</a></li>
+                                </ul>
+                                                  
+                            </div>
+                            {% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Main Navigation -->
+
+		<nav class="main_nav">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						
+						<div class="main_nav_content d-flex flex-row">
+
+							<!-- Categories Menu -->
+
+							<div class="cat_menu_container">
+								<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
+									<div class="cat_burger"><span></span><span></span><span></span></div>
+									<div class="cat_menu_text">categories</div>
+								</div>
+
+								<ul class="cat_menu">
+									<li><a href="#">Mobile Phones<i class="fas fa-chevron-right ml-auto"></i></a></li>
+									<li><a href="{% url 'core:oppo-search-results' %}">Oppo<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:nokia-search-results' %}">Nokia<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:samsung-search-results' %}">Samsung<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:iphone-search-results' %}">Iphone<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:tecno-search-results' %}">Tecno<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="{% url 'core:infinix-search-results' %}">Infinix<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="{% url 'core:oneplus-search-results' %}">Oneplus<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:huawei-search-results' %}">Huawei<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:realme-search-results' %}">Realme<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="{% url 'core:vivo-search-results' %}">Vivo<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="{% url 'core:redmi-search-results' %}">Redmi<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:accessory-search-results' %}">Accessories<i class="fas fa-chevron-right"></i></a></li>
+
+								</ul>
+							</div>
+
+							<!-- Main Nav Menu -->
+
+							<div class="main_nav_menu ml-auto">
+								<ul class="standard_dropdown main_nav_dropdown">
+									<li><a href="{% url 'core:home' %}">Home<i class="fas fa-chevron-down"></i></a></li>
+									<li class="hassubs">
+										<a href="#">Computers and Tablets<i class="fas fa-chevron-down"></i></a>
+										<ul>
+											<li><a href="{% url 'core:computer-search-results' %}">Computers<i class="fas fa-chevron-down"></i></a></li>
+											<li><a href="{% url 'core:tablet-search-results' %}">Tablets<i class="fas fa-chevron-down"></i></a></li>
+										</ul>
+									</li>
+
+								</ul>
+							</div>
+
+							<!-- Menu Trigger -->
+
+							<div class="menu_trigger_container ml-auto">
+								<div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+									<div class="menu_burger">
+										<div class="menu_trigger_text">menu</div>
+										<div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- Menu -->
+
+		<div class="page_menu">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						
+						<div class="page_menu_content">
+							
+							<div class="page_menu_search">
+								<form action="#">
+									<input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
+								</form>
+							</div>
+							<ul class="page_menu_nav">
+								<li class="page_menu_item">
+									<a href="#">Home<i class="fa fa-angle-down"></i></a>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Computers and Tablets<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">Computers and Tablets<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="{% url 'core:tablet-search-results' %}">Tablets<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="{% url 'core:computer-search-results' %}">Computers<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+							</ul>
+							
+							<div class="menu_contact">
+								<div class="menu_contact_item"><div class="menu_contact_icon"><img src="{% static 'images/phone_white.png' %}" alt=""></div>0795827252</div>
+								<div class="menu_contact_item"><div class="menu_contact_icon"><img src="{% static 'images/mail_white.png' %}" alt=""></div><a href="mailto:gadgetarena.g3@gmail.com">gadgetarena.g3@gmail.com</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+	    <!-- Header Section End -->
+
+        <div class="mt-5 pt-4">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dissmisible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss='alert' aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        {% block body %}
+       
+
+
+
+        {% endblock body %}
+
+<!-- Footer -->
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-3 footer_col">
+					<div class="footer_column footer_contact">
+						<div class="logo_container">
+							<div class="logo"><a href="#"><img src="{% static 'img/logo.jpeg' %}" alt=""></a></div>
+						</div>
+						<div class="footer_title">Got Question? Call Us 24/7</div>
+						<div class="footer_phone">0795827252</div>
+						<div class="footer_contact_text">
+							<p>Nairobi, Kenya</p>
+						</div>
+						<div class="footer_social">
+							<ul>
+								<li><a href="https://www.facebook.com/phonesarenaKE"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="https://www.instagram.com/gadget.arena30"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+								<li><a href="#"><i class="fab fa-google"></i></a></li>
+								<li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-2 offset-lg-2">
+					<div class="footer_column">
+						<div class="footer_title">Find it Fast</div>
+						<ul class="footer_list">
+							<li><a href="#">Computers & Laptops</a></li>
+							<li><a href="#">Accessories</a></li>
+							<li><a href="#">Hot Deals</a></li>
+							<li><a href="#">Smartphones & Tablets</a></li>
+							<li><a href="#">Audio Accessories</a></li>
+						</ul>
+						<div class="footer_subtitle">Gadgets</div>
+						<ul class="footer_list">
+							<li><a href="#"> Electronics</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-2">
+					<div class="footer_column">
+						<ul class="footer_list footer_list_2">
+							<li><a href="#">Latest products & Consoles</a></li>
+							<li><a href="#">Accessories</a></li>
+							<li><a href="#">Featured products</a></li>
+							<li><a href="#">Reviews</a></li>
+							<li><a href="#">Computers & Laptops</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-2">
+					<div class="footer_column">
+						<div class="footer_title">Customer Care</div>
+						<ul class="footer_list">
+							<li><a href="#">Innovation</a></li>
+							<li><a href="#">Order Tracking</a></li>
+							<li><a href="#">Wish List</a></li>
+							<li><a href="#">Customer Services</a></li>
+							<li><a href="#">Returns / Exchange</a></li>
+							<li><a href="#">FAQs</a></li>
+							<li><a href="#">Product Support</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+	<!-- Copyright -->
+
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					
+					<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
+						<div class="copyright_content">
+Gadget Arena &copy;<script>document.write(new Date().getFullYear());</script> 
+<!-- All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> -->
+ <!-- by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+
+</div>
+						<div class="logos ml-sm-auto">
+							<ul class="logos_list">
+								<li><a href="#"><img src="{% static 'images/logos_1.png' %}" alt=""></a></li>
+								<li><a href="#"><img src="{% static 'images/logos_2.png' %}" alt=""></a></li>
+								<li><a href="#"><img src="{% static 'images/logos_3.png' %}" alt=""></a></li>
+								<li><a href="#"><img src="{% static 'images/logos_4.png' %}" alt=""></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script type="text/javascript" src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1565190285/Scripts/xzoom.min.js"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/slick-1.8.0/slick.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>

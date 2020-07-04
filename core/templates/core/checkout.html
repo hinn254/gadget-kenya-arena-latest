@@ -1,0 +1,96 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %}Gadget Arena| Checkout{% endblock %}
+
+{% block body %}
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <h4>BILLING DETAILS</h4>
+                <form method="POST" class="card-body">
+                        {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        {{ form.first_name }}
+                                        <label for="firstName" class="">First name</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        {{ form.last_name }}
+                                        <label for="lastName" class="">Last name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout__input">
+                                {{ form.address}}
+                                <label for="address" class="">Address</label>
+                            </div>
+                            <div class="checkout__input">
+                                
+
+                                 {{ form.country }}
+                                 <label for="country">Country</label>
+                                <div class="invalid-feedback">
+                                    Please select a valid country.
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        {{ form.phone_number }}
+                                        <label for="email" class="">Phone Number</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        {{ form.email_address }}
+                                          <label for="email" class="">Email Address</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4>Your Order</h4>
+                                <div class="checkout__order__products">Products <span>Total</span></div>
+                                 <ul class="list-group mb-3 z-depth-1">
+                                    {% for order_item in order.items.all %}
+                                    <li>
+                                        <div>
+                                        <h6 class="my-0">{{ order_item.quantity }} x {{ order_item.item.title}}</h6>
+                                        <!-- <small class="text-muted">{{ order_item.item.description}}</small> -->
+                                        </div>
+                                        <span class="text-muted">Ksh{{ order_item.get_final_price }}</span>
+                                    </li>
+                                    {% endfor %}
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Total (Ksh)</span>
+                                        <strong>Ksh. {{ order.get_total }}</strong>
+                                    </li>
+                                    </ul>
+                                   <hr>
+
+                            </>
+                            <hr class="mb-4">
+                        <button type="submit" class="site-btn">PLACE ORDER</button>
+                            </div>
+                        </div>
+                    </div>
+                   
+
+                    </form>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
+{% endblock body %}

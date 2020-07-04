@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Checkout Page {% endblock %}
+
+  {% block styl %}<body class="grey lighten-3">{% endblock%}
+{% block body %}
+
+  <!--Main layout-->
+  <main>
+    <div class="container wow fadeIn">
+
+      <!-- Heading -->
+      <h2 class="my-5 h2 text-center">Order Submited Successfully!</h2>
+
+      <div class="container text-center"></div>
+        <h4 class="my-5 h2 text-center">
+        <span class="text-muted">Our team will get in touch with you soon.</span>
+        
+        </h4>
+        <h4 class="my-5 h2 text-center">
+          <span class="text-muted">Thank you for choosing us.</span>  
+          <a class='btn btn-primary' href='/'>Continue shopping</a>
+        </h4>
+        <h4 class="my-5 h2 text-center">
+          <span class="text-muted">For Inquiries</span>
+          <span class="text-muted">Call: 0795827252</span>
+          </h4>
+        
+          
+   
+    </div>
+    
+    
+
+    </div>
+</main>
+<!--Main layout-->
+
+{% endblock %}

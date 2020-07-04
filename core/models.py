@@ -12,7 +12,6 @@ CATEGORY_CHOICES = (
     ('ON','Oneplus'),
     ('VI','Vivo'),
     ('RM','RealMe'),
-    ('VI','Vivo'),
     ('IN','Infinix'),
     ('HU','Huawei'),
     ('HT','Htc'),

@@ -20,6 +20,7 @@ CATEGORY_CHOICES = (
     ('RE','Redmi'),
     ('TA','Tablet'),
     ('CO','Computer'),
+    ('LP','Laptop'),
     ('AC','Accessory'),
 
 )

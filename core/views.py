@@ -391,3 +391,15 @@ class SearchResultsVivo(ListView):
             Q(title__icontains='VIVO') | Q(title__icontains='vivo') | Q(title__icontains='Vivo') 
             )
         return object_list
+
+
+class SearchResultsLaptop(ListView):
+    model = Item
+    paginate_by = 16
+    template_name = 'core/search_results.html'
+
+    def get_queryset(self):
+        object_list = Item.objects.filter(
+            Q(title__icontains='laptop') | Q(title__icontains='Laptop') | Q(title__icontains='LAPTOP') 
+            )
+        return object_list

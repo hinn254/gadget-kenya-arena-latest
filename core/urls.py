@@ -31,6 +31,7 @@ urlpatterns = [
     path('vivo-search-results/',views.SearchResultsVivo.as_view(),name='vivo-search-results'),
     path('computer-search-results/',views.SearchResultsComputer.as_view(),name='computer-search-results'),
     path('redmi-search-results/',views.SearchResultsRedmi.as_view(),name='redmi-search-results'),
+    path('laptop-search-results/',views.SearchResultsLaptop.as_view(),name='laptop-search-results'),
 
 
 

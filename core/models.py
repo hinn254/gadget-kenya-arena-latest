@@ -49,7 +49,7 @@ class Item(models.Model):
     operating_system = models.CharField(max_length=100)
     screen_size = models.CharField(max_length=100)
     sim_card_slots = models.CharField(max_length=100)
-    image = models.ImageField()
+    image = models.ImageField(blank=True, null=True)
 
     def __str__(self):
         return self.title

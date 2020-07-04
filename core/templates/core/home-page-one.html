@@ -5,6 +5,75 @@
 
 
 {% block body %}
+		<!-- Main Navigation -->
+
+		<nav class="main_nav">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						
+						<div class="main_nav_content d-flex flex-row">
+
+							<!-- Categories Menu -->
+
+							<div class="cat_menu_container">
+								<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
+									<div class="cat_burger"><span></span><span></span><span></span></div>
+									<div class="cat_menu_text">categories</div>
+								</div>
+
+								<ul class="cat_menu">
+									<li><a href="#">Mobile Phones<i class="fas fa-chevron-right ml-auto"></i></a></li>
+									<li><a href="{% url 'core:oppo-search-results' %}">Oppo<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:nokia-search-results' %}">Nokia<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:samsung-search-results' %}">Samsung<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:iphone-search-results' %}">Iphone<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:tecno-search-results' %}">Tecno<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:htc-search-results' %}">Htc</a></li>
+                                    <li><a href="{% url 'core:infinix-search-results' %}">Infinix<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="{% url 'core:oneplus-search-results' %}">Oneplus<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:huawei-search-results' %}">Huawei<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:realme-search-results' %}">Realme<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="{% url 'core:vivo-search-results' %}">Vivo<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="{% url 'core:redmi-search-results' %}">Redmi<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="{% url 'core:accessory-search-results' %}">Accessories<i class="fas fa-chevron-right"></i></a></li>
+
+								</ul>
+							</div>
+
+							<!-- Main Nav Menu -->
+
+							<div class="main_nav_menu ml-auto">
+								<ul class="standard_dropdown main_nav_dropdown">
+									<li><a href="{% url 'core:home' %}">Home<i class="fas fa-chevron-down"></i></a></li>
+									<li class="hassubs">
+										<a href="#">Computers and Tablets<i class="fas fa-chevron-down"></i></a>
+										<ul>
+											<li><a href="{% url 'core:computer-search-results' %}">Computers<i class="fas fa-chevron-down"></i></a></li>
+											<li><a href="{% url 'core:tablet-search-results' %}">Tablets<i class="fas fa-chevron-down"></i></a></li>
+										</ul>
+									</li>
+
+								</ul>
+							</div>
+
+							<!-- Menu Trigger -->
+
+							<div class="menu_trigger_container ml-auto">
+								<div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+									<div class="menu_burger">
+										<div class="menu_trigger_text">menu</div>
+										<div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
 	<!-- Banner -->
 
 	<div class="banner">
@@ -14,10 +83,10 @@
 				<div class="banner_product_image"><img src="{% static 'images/banner_product.png' %}" alt=""></div>
 				<div class="col-lg-5 offset-lg-4 fill_height">
 					<div class="banner_content">
-						<h1 class="animated backInRight banner_text">new era of smartphones</h1>
-						<div class="animated backInLeft banner_price">Computers & Tablets</div>
+						<h1 class="animated bounceInDown banner_text">new era of smartphones</h1>
+						<div class="animated bounceInDown banner_price">Computers & Tablets</div>
 						<div class="animated bounceInDown banner_product_name">Accessories</div>
-						<div class="animated heartBeat button banner_button"><a href="#">Shop Now</a></div>
+						<div class="animated bounceInDown button banner_button"><a href="#">Shop Now</a></div>
 					</div>
 				</div>
 			</div>
@@ -568,7 +637,7 @@
 	<!-- Trends -->
 
 	<div class="trends">
-		<div class="trends_background" style="background-image:url(images/trends_background.jpg)"></div>
+		<div class="trends_background" style="background-image:url({% static 'images/trends_background.jpg' %})"></div>
 		<div class="trends_overlay"></div>
 		<div class="container">
 			<div class="row">

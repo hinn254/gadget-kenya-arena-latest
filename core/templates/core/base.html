@@ -9,6 +9,7 @@
 <meta name="description" content="Gadget Arena Kenya online phone and accessories shopping">
 <meta name="keywords" content="Gadget, Arena, online, phone, accessory">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "icon" href="{% static 'img/logo.jpeg' %}" type = "image/x-icon">     
 <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
@@ -25,7 +26,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
 <style>
-	.banner_text, .banner_price, .banner_product_name, .banner_button {
+	.banner_text,.banner_price,.banner_product_name,.banner_button{
   animation-duration: 3s;
   animation-delay: 1s;
   animation-iteration-count: infinite;
@@ -63,8 +64,8 @@
 
 					<!-- Logo -->
 					<div class="col-lg-2 col-sm-3 col-3 order-1">
-						<div class="logo_container">
-							<div class="logo"><a href="#"><img src="{% static 'img/logo.jpeg' %}" alt=""></a>
+						<div class="navbar-brand">
+							<div class="navbar-brand"><a href="#"><img src="{% static 'img/logo.jpeg' %}" alt=""></a>
                             </div>
 						</div>
 					</div>
@@ -273,7 +274,7 @@
 				<div class="col-lg-3 footer_col">
 					<div class="footer_column footer_contact">
 						<div class="logo_container">
-							<div class="logo"><a href="#"><img src="{% static 'img/logo.jpeg' %}" alt=""></a></div>
+							<div class="navbar-brand"><a href="#"><img src="{% static 'img/logo.jpeg' %}" alt=""></a></div>
 						</div>
 						<div class="footer_title">Got Question? Call Us 24/7</div>
 						<div class="footer_phone">0795827252</div>

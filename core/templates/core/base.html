@@ -60,6 +60,29 @@
 					<div class="col d-flex flex-row">
 						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{% static 'images/phone.png' %}" alt=""></div>0795827252</div>
 						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{% static 'images/mail.png' %}" alt=""></div><a href="mailto:gadgetarena.g3@gmail.com">gadgetarena.g3@gmail.com</a></div>
+						<div class="top_bar_content ml-auto">
+							<div class="top_bar_user">
+								<div class="user_icon"><img src="images/user.svg" alt=""></div>
+											<!-- Cart -->
+											{% if request.user.is_authenticated %}
+											<div class="header__cart">
+												<ul>
+													<li><a href="{% url 'core:order-summary' %}"><i class="fa fa-shopping-bag"></i> <span>{{ request.user|cart_item_count }}</span></a></li>
+													<li><a href="{% url 'account_logout' %}"><i class="fa fa-user"></i> Logout</a></li>
+												</ul>
+																  
+											</div>
+											{% else %}
+											  <div class="header__cart">
+												<ul>
+													<li><a href="{% url 'account_signup' %}"><i class="fa fa-user"></i>Sign Up</a></li>
+													<li><a href="{% url 'account_login' %}"><i class="fa fa-user"></i> Login</a></li>
+												</ul>
+																  
+											</div>
+											{% endif %}
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>		
@@ -119,9 +142,9 @@
 					</div>
 
 					<!-- Wishlist -->
-					<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+					<!-- <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
 						<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-							<!-- Cart -->
+							
                             {% if request.user.is_authenticated %}
                             <div class="header__cart">
                                 <ul>
@@ -140,7 +163,7 @@
                             </div>
                             {% endif %}
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

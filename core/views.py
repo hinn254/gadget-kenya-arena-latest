@@ -217,7 +217,6 @@ def remove_single_item_from_cart(request, slug):
 
 class SearchResultsAcc(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -228,7 +227,6 @@ class SearchResultsAcc(ListView):
 
 class SearchResultsIphone(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -239,7 +237,6 @@ class SearchResultsIphone(ListView):
 
 class SearchResultsOppo(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -250,7 +247,6 @@ class SearchResultsOppo(ListView):
 
 class SearchResultsNokia(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -261,7 +257,6 @@ class SearchResultsNokia(ListView):
 
 class SearchResultsHuawei(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -272,7 +267,6 @@ class SearchResultsHuawei(ListView):
 
 class SearchResultsSamsung(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -283,7 +277,6 @@ class SearchResultsSamsung(ListView):
 
 class SearchResultsTecno(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -294,7 +287,6 @@ class SearchResultsTecno(ListView):
 
 class SearchResultsRedmi(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -305,7 +297,6 @@ class SearchResultsRedmi(ListView):
 
 class SearchResultsInfinix(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -316,7 +307,6 @@ class SearchResultsInfinix(ListView):
 
 class SearchResultsHtc(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -327,7 +317,6 @@ class SearchResultsHtc(ListView):
 
 class SearchResultsRealMe(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -338,7 +327,6 @@ class SearchResultsRealMe(ListView):
 
 class SearchResultsOneplus(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -349,7 +337,6 @@ class SearchResultsOneplus(ListView):
 
 class SearchResultsHot(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -359,7 +346,6 @@ class SearchResultsHot(ListView):
 
 class SearchResultsTablet(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -371,7 +357,6 @@ class SearchResultsTablet(ListView):
 
 class SearchResultsComputer(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -383,7 +368,6 @@ class SearchResultsComputer(ListView):
 
 class SearchResultsVivo(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):
@@ -395,7 +379,6 @@ class SearchResultsVivo(ListView):
 
 class SearchResultsLaptop(ListView):
     model = Item
-    paginate_by = 16
     template_name = 'core/search_results.html'
 
     def get_queryset(self):

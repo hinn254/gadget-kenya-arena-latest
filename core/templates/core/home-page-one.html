@@ -179,7 +179,7 @@
 							<div class="tabs">
 								<ul class="clearfix">
 									<li class="active">Featured</li>
-									<li>On Sale</li>
+									<li>New Arrivals</li>
 									<li>Best Rated</li>
 								</ul>
 								<div class="tabs_line"><span></span></div>
@@ -341,7 +341,7 @@
 								</div>
 								<div class="col-lg-8 col-md-6 fill_height">
 									<div class="banner_2_image_container">
-										<div class="banner_2_image"><img src="{% static 'images/banner_3_product.jpeg' %}" alt=""></div>
+										<div class="banner_2_image"><img src="{% static 'images/banner_1_product.jpg' %}" alt=""></div>
 									</div>
 								</div>
 							</div>
@@ -365,7 +365,7 @@
 								</div>
 								<div class="col-lg-8 col-md-6 fill_height">
 									<div class="banner_2_image_container">
-										<div class="banner_2_image"><img src="{% static 'images/banner_1_product.jpeg' %}" alt=""></div>
+										<div class="banner_2_image"><img src="{% static 'images/banner_2_product.webp' %}" alt=""></div>
 									</div>
 								</div>
 							</div>
@@ -389,7 +389,7 @@
 								</div>
 								<div class="col-lg-8 col-md-6 fill_height">
 									<div class="banner_2_image_container">
-										<div class="banner_2_image"><img src="{% static 'images/banner_2_product.jpeg' %}" alt=""></div>
+										<div class="banner_2_image"><img src="{% static 'images/banner_1_product.jpg' %}" alt=""></div>
 									</div>
 								</div>
 							</div>
@@ -412,7 +412,8 @@
 							<div class="new_arrivals_title">Phones and Accessories</div>
 							<ul class="clearfix">
 								<li class="active">All </li>
-							
+								<li>Flash Deals</li>
+								<li>Top Selections</li>
 							</ul>
 							<div class="tabs_line"><span></span></div>
 						</div>
@@ -664,8 +665,8 @@
 						<!-- Trends Slider -->
 
 						<div class="owl-carousel owl-theme trends_slider">
-                            {% for item in item_list %}
-                            {% if forloop.counter < 6 %} 
+                            {% for item in item_list reversed %}
+                            {% if forloop.counter > 8 %} 
 							<!-- Trends Slider Item -->
 
 							<div class="owl-item">

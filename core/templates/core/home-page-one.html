@@ -145,7 +145,7 @@
 							
 							<!-- Deals Slider -->
 							<div class="owl-carousel owl-theme deals_slider">
-								{% for item in item_list reversed %}
+								{% for item in item_list %}
 								<!-- Deals Item -->
 								<div class="owl-item deals_item">
 									<div class="deals_image"><img src="{{ item.image.url }}" alt=""></div>
@@ -190,7 +190,6 @@
 									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
-										<br>
 										<div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
 											<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ item.image.url }}" alt="{{ item.title }}"></div>
 											<div class="product_content">
@@ -218,7 +217,6 @@
 									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
-										<br>
                                         <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
 											<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ item.image.url }}" alt="{{ item.title }}"></div>
 											<div class="product_content">
@@ -299,7 +297,7 @@
 							<!-- Popular Categories Item -->
 							<div class="owl-item">
 								<div class="popular_category d-flex flex-column align-items-center justify-content-center">
-									<div class="popular_category_image"><img src="{{ item.title }}" alt=""></div>
+									<div class="popular_category_image"><img src="{{ item.image.url }}" alt=""></div>
 									<div class="popular_category_text"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></div>
 								</div>
 							</div>
@@ -668,7 +666,6 @@
 
 							<div class="owl-item">
 								<div class="trends_item is_new">
-									<br>
 
 									<div class="trends_image d-flex flex-column align-items-center justify-content-center"><img src="{{ item.image.url }}" alt=""></div>
 									<div class="trends_content">

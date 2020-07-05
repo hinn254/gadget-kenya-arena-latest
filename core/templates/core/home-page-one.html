@@ -109,11 +109,11 @@
 							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/iphone-logo.png' %}" alt=""></div></div>
 							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/oneplus-logo.png' %}" alt=""></div></div>
 							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/realme-logo.png' %}" alt=""></div></div>
-							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/Oppo-logo.jpg' %}" alt=""></div></div>
+							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/oppo-logo.jpg' %}" alt=""></div></div>
 							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/redmi-logo.jpeg' %}" alt=""></div></div>
-							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/samsung.png' %}" alt=""></div></div>
-							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/tecno-logo.png' %}" alt=""></div></div>
-							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/vivo-logo.png' %}" alt=""></div></div>
+							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/samsunglogo.png' %}" alt=""></div></div>
+							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/tecno.jpg' %}" alt=""></div></div>
+							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/vivologo.png' %}" alt=""></div></div>
 							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/nokia-logo.png' %}" alt=""></div></div>
 							<div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="{% static 'images/htc.png' %}" alt=""></div></div>
 						
@@ -146,6 +146,8 @@
 							<!-- Deals Slider -->
 							<div class="owl-carousel owl-theme deals_slider">
 								{% for item in item_list %}
+								{% if forloop.counter > 12 %}
+
 								<!-- Deals Item -->
 								<div class="owl-item deals_item">
 									<div class="deals_image"><img src="{{ item.image.url }}" alt=""></div>
@@ -156,6 +158,8 @@
 										</div>
 									</div>
 								</div>
+								{% endif %}
+
                                 {% endfor %}
 
 
@@ -552,7 +556,7 @@
 
 							<div class="bestsellers_slider slider">
                                 {% for item in item_list %}
-                                {% if forloop.counter > 22 and forloop.counter < 25 %} 
+                                {% if forloop.counter > 8 and forloop.counter < 22 %} 
 								<!-- Best Sellers Item -->
 								<div class="bestsellers_item discount">
 									<div class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start">

@@ -29,13 +29,20 @@
 <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
 <style>
-	.banner_text,.banner_price,.banner_product_name,.banner_button{
+	.banner_text, .banner_price, .banner_button, .banner_product_name{
   animation-duration: 3s;
-  animation-delay: 1s;
+  animation-delay: 0s;
   animation-iteration-count: infinite;
 }
 
 </style>
+
+<style>
+	.logo-text{
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
 
 <style>	
 	.zoom:hover {
@@ -104,7 +111,7 @@
 						<div class="logo">
 							<br>
 							<br>
-							<div class="logo"><a href="#">Gadget Arena</a>
+							<div class="logo"><a class="animated zoomInDown logo-text" href="#">Gadget Arena</a>
                             </div>
 						</div>
 					</div>

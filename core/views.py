@@ -361,7 +361,7 @@ class SearchResultsComputer(ListView):
 
     def get_queryset(self):
         object_list = Item.objects.filter(
-            Q(title__icontains='computer') | Q(title__icontains='laptop') | Q(title__icontains='LAPTOP') 
+            Q(title__icontains='computer') | Q(title__icontains='computers') | Q(title__icontains='COMPUTER') 
             )
         return object_list
 
@@ -383,6 +383,6 @@ class SearchResultsLaptop(ListView):
 
     def get_queryset(self):
         object_list = Item.objects.filter(
-            Q(title__icontains='laptop') | Q(title__icontains='Laptop') | Q(title__icontains='LAPTOP') 
+            Q(title__icontains='laptop') | Q(title__icontains='Laptops') | Q(title__icontains='LAPTOP') | Q(title__icontains='Laptop')
             )
         return object_list

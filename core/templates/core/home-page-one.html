@@ -304,8 +304,9 @@
                             {% if forloop.counter > 33 %}
 							<!-- Popular Categories Item -->
 							<div class="owl-item">
+								<br>
 								<div class="popular_category d-flex flex-column align-items-center justify-content-center">
-									<br>
+									
 									<div class="popular_category_image"><img src="{{ item.image.url }}" alt=""></div>
 									<div class="popular_category_text"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></div>
 								</div>

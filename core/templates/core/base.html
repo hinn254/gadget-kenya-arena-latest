@@ -54,11 +54,6 @@
 <body>
 
 <div class="super_container">
-	    <!-- Page Preloder -->
-		<div id="preloder">
-			<div class="loader"></div>
-		</div>
-	
 	<!-- Header -->
 	
 	<header class="header">
@@ -72,7 +67,7 @@
 						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{% static 'images/phone.png' %}" alt=""></div>0795827252</div>
 						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{% static 'images/mail.png' %}" alt=""></div><a href="mailto:gadgetarena.g3@gmail.com">gadgetarena.g3@gmail.com</a></div>
 						<div class="top_bar_content ml-auto">
-							<div class="top_bar_user">
+							<div class="top_bar_menu">
 											<!-- Cart -->
 											{% if request.user.is_authenticated %}
 											<div class="header__cart">
@@ -107,7 +102,7 @@
 					<!-- Logo -->
 					<div class="col-lg-2 col-sm-3 col-3 order-1">
 						<div class="logo">
-							<div class="logo"><a href="#">Gadget Arena</a>
+							<div class="logo"><br><a href="#">Gadget Arena</a>
                             </div>
 						</div>
 					</div>

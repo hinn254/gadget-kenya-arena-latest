@@ -190,12 +190,13 @@
 								<div class="featured_slider slider">
 									{% for item in item_list %}
 									
-                                    {% if forloop.counter > 30 and forloop.counter < 47 %}
+                                    {% if forloop.counter > 33 and forloop.counter < 50 %}
 
 									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
+											<br>
 											<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ item.image.url }}" alt="{{ item.title }}"></div>
 											<div class="product_content">
 												<div class="product_price discount">Ksh. {{ item.price }}</div>

@@ -188,8 +188,9 @@
 							<!-- Product Panel -->
 							<div class="product_panel panel active">
 								<div class="featured_slider slider">
-                                    {% for item in item_list %}
-                                    {% if forloop.counter < 17 %}
+									{% for item in item_list %}
+									
+                                    {% if forloop.counter > 30 and forloop.counter < 47 %}
 
 									<!-- Slider Item -->
 									<div class="featured_slider_item">
@@ -423,7 +424,7 @@
 								<!-- Product Panel -->
 								<div class="product_panel panel active">
 									<div class="arrivals_slider slider">
-                                        {% for item in item_list reversed %}
+                                        {% for item in item_list %}
                                         {% if forloop.counter > 9 and forloop.counter < 26 %}
 										<!-- Slider Item -->
 										<div class="arrivals_slider_item">

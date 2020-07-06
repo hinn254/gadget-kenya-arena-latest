@@ -10,7 +10,7 @@
 
       <!--Grid row-->
       <div class="row wow fadeIn">
-	{% if object.get_category_display != 'Accessory' %}
+	{% if object.get_category_display != 'Accessory' or 'Computer'%}
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
@@ -159,25 +159,12 @@
 
         <!--Grid column-->
         <div class="col-md-6 mb-4">
-            <div class="xzoom-container"">
-              <img src="{{ item.image.url }}" class="xzoom img-fluid" id="xzoom-default" alt="">
 
-            </div>
+          <img src="{{ item.image.url }}" class="zoom img-fluid" alt="">
 
         </div>
         				<!-- Selected Image -->
-				<!-- <div class="xzoom-container col-md-6 mb-4">
-          <div class="xzoom-container container d-flex justify-content-center">
-            <section id="default" class="xzoom-container padding-top0">
-                <div class="xzoom-container row">
-                    <div class="xzoom-container large-5 column">
-                        <div class="zoom xzoom-container"> <img class="xzoom" id="xzoom-default" src="{{ item.image.url }}" xoriginal="{{ item.image.url }}" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-				</div> -->
+	
 
         <!--Grid column-->
 

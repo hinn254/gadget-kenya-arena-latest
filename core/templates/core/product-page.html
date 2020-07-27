@@ -8,6 +8,11 @@
   <main class="mt-5 pt-4">
     <div class="container dark-grey-text mt-5">
 
+      <h4 class="my-4 h4">  <a href="{% url 'core:home' %}"
+        ><i class="fa fa-home" aria-hidden="true"></i> Back</a
+      ></h4>
+
+
       <!--Grid row-->
       <div class="row wow fadeIn">
 	{% if object.get_category_display != 'Accessory' or 'Computer'%}

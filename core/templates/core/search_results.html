@@ -1,119 +1,147 @@
-{% extends 'core/base.html' %}
-{% load static %}
+{% extends 'core/base.html' %} {% load static %} {% block title %} Product Page
+{% endblock %} {% block body %}
 
-{% block title %} Product Page {% endblock %}
+<!-- Menu -->
 
+<div class="page_menu">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="page_menu_content">
+          <ul class="page_menu_nav">
+            <li class="page_menu_item">
+              <a href="#">Home<i class="fa fa-angle-down"></i></a>
+            </li>
+            <li class="page_menu_item has-children">
+              <a href="#"
+                >Computers and Tablets<i class="fa fa-angle-down"></i
+              ></a>
+              <ul class="page_menu_selection">
+                <li>
+                  <a href="#"
+                    >Computers and Tablets<i class="fa fa-angle-down"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="{% url 'core:tablet-search-results' %}"
+                    >Tablets<i class="fa fa-angle-down"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="{% url 'core:computer-search-results' %}"
+                    >Computers<i class="fa fa-angle-down"></i
+                  ></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
 
-{% block body %} 
+          <div class="menu_contact">
+            <div class="menu_contact_item">
+              <div class="menu_contact_icon">
+                <img src="{% static 'images/phone_white.png' %}" alt="" />
+              </div>
+              0795827252
+            </div>
+            <div class="menu_contact_item">
+              <div class="menu_contact_icon">
+                <img src="{% static 'images/mail_white.png' %}" alt="" />
+              </div>
+              <a href="mailto:gadgetarena.g3@gmail.com"
+                >gadgetarena.g3@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-		<!-- Menu -->
+<!-- Best Sellers -->
 
-		<div class="page_menu">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						
-						<div class="page_menu_content">
-							
-							<div class="page_menu_search">
-								<form action="#">
-									<input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
-								</form>
-							</div>
-							<ul class="page_menu_nav">
-								<li class="page_menu_item">
-									<a href="#">Home<i class="fa fa-angle-down"></i></a>
-								</li>
-								<li class="page_menu_item has-children">
-									<a href="#">Computers and Tablets<i class="fa fa-angle-down"></i></a>
-									<ul class="page_menu_selection">
-										<li><a href="#">Computers and Tablets<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="{% url 'core:tablet-search-results' %}">Tablets<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="{% url 'core:computer-search-results' %}">Computers<i class="fa fa-angle-down"></i></a></li>
-									</ul>
-								</li>
-							</ul>
-							
-							<div class="menu_contact">
-								<div class="menu_contact_item"><div class="menu_contact_icon"><img src="{% static 'images/phone_white.png' %}" alt=""></div>0795827252</div>
-								<div class="menu_contact_item"><div class="menu_contact_icon"><img src="{% static 'images/mail_white.png' %}" alt=""></div><a href="mailto:gadgetarena.g3@gmail.com">gadgetarena.g3@gmail.com</a></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<div class="best_sellers">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="new_arrivals_title">
+          <a href="{% url 'core:home' %}"
+            ><i class="fa fa-home" aria-hidden="true"></i> Back</a
+          >
+        </div>
+        <div class="tabbed_container">
+          <div class="tabs clearfix tabs-right">
+            <div class="new_arrivals_title">Hot & Best Deals</div>
+            <ul class="clearfix">
+              <li class="active">All</li>
+              <li>Sorted</li>
+            </ul>
+            <div class="tabs_line"><span></span></div>
+          </div>
 
-	<!-- Best Sellers -->
+          <div class="bestsellers_panel panel active">
+            <!-- Best Sellers Slider -->
 
-	<div class="best_sellers">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="tabbed_container">
-						<div class="tabs clearfix tabs-right">
-							<div class="new_arrivals_title">Hot & Best Deals</div>
-							<ul class="clearfix">
-                                <li class="active">All</li>
-                                <li>Sorted</li>
-							</ul>
-							<div class="tabs_line"><span></span></div>
-						</div>
+            <div class="bestsellers_slider slider">
+              {% for item in item_list %}
+              <!-- Best Sellers Item -->
+              <div class="bestsellers_item discount">
+                <div
+                  class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start"
+                >
+                  <div class="bestsellers_image">
+                    <img src="{{ item.image.url }}" alt="" />
+                  </div>
+                  <div class="bestsellers_content">
+                    <div class="bestsellers_name">
+                      <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+                    </div>
+                    <div class="bestsellers_price discount">
+                      Ksh. {{ item.price }}
+                    </div>
+                  </div>
+                </div>
+                <div class="bestsellers_fav active">
+                  <i class="fas fa-heart"></i>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
 
-						<div class="bestsellers_panel panel active">
+          <div class="bestsellers_panel panel">
+            <!-- Best Sellers Slider -->
 
-							<!-- Best Sellers Slider -->
+            <div class="bestsellers_slider slider">
+              {% for item in item_list reversed%}
+              <!-- Best Sellers Item -->
+              <div class="bestsellers_item discount">
+                <div
+                  class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start"
+                >
+                  <div class="bestsellers_image">
+                    <img src="{{ item.image.url }}" alt="" />
+                  </div>
+                  <div class="bestsellers_content">
+                    <div class="bestsellers_name">
+                      <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+                    </div>
+                    <div class="bestsellers_price discount">
+                      Ksh. {{ item.price }}
+                    </div>
+                  </div>
+                </div>
+                <div class="bestsellers_fav active">
+                  <i class="fas fa-heart"></i>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-							<div class="bestsellers_slider slider">
-                                {% for item in item_list %}
-								<!-- Best Sellers Item -->
-								<div class="bestsellers_item discount">
-									<div class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start">
-										<div class="bestsellers_image"><img src="{{ item.image.url }}" alt=""></div>
-										<div class="bestsellers_content">
-											<div class="bestsellers_name"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></div>
-											<div class="bestsellers_price discount">Ksh. {{ item.price }}</div>
-										</div>
-									</div>
-									<div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
-					
-								</div>
-                                {% endfor %}
-
-							</div>
-						</div>
-
-						<div class="bestsellers_panel panel">
-
-							<!-- Best Sellers Slider -->
-
-							<div class="bestsellers_slider slider">
-
-                                {% for item in item_list reversed%}
-								<!-- Best Sellers Item -->
-								<div class="bestsellers_item discount">
-									<div class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start">
-										<div class="bestsellers_image"><img src="{{ item.image.url }}" alt=""></div>
-										<div class="bestsellers_content">
-											<div class="bestsellers_name"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></div>
-											<div class="bestsellers_price discount">Ksh. {{ item.price }}</div>
-										</div>
-									</div>
-									<div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
-					
-								</div>
-                                {% endfor %}
-
-	
-							</div>
-						</div>
-					</div>
-						
-				</div>
-			</div>
-		</div>
-	</div>
-
-    
 {% endblock %}
-

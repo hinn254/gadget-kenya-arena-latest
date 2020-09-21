@@ -55,8 +55,7 @@ class CheckoutView(LoginRequiredMixin, View):
                 phone_number = form.cleaned_data.get('phone_number')
                 country = form.cleaned_data.get('country')
                 address = form.cleaned_data.get('address')
-                # TODO: add functionality
-                # save_info = form.cleaned_data.get('save_info')
+      
                 payment_option = form.cleaned_data.get('payment_option')
 
                 billing_address = BillingAddress(
@@ -79,7 +78,6 @@ class CheckoutView(LoginRequiredMixin, View):
 
                 order.ordered = True
                 order.save()
-                # TODO: add redirect to the selected payment option
                 messages.success(self.request, "Your order was successful!")
                 return redirect('core:order-submitted')
                           

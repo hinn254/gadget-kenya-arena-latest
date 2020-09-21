@@ -15,7 +15,7 @@
 
       <!--Grid row-->
       <div class="row wow fadeIn">
-	{% if object.get_category_display != 'Accessory' or 'Computer'%}
+	{% if object.get_category_display != 'Accessory' or 'Computer' or 'Laptop' %}
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
@@ -54,15 +54,6 @@
 
             <p>{{object.description}}</p>
 
-            <!-- <form class="d-flex justify-content-left"> -->
-              <!-- Default input -->
-              <!-- <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-              <button class="btn btn-primary btn-md my-0 p" type="submit">
-                Add to cart
-                <i class="fas fa-shopping-cart ml-1"></i>
-              </button>
-
-            </form> -->
             <a href='{{object.get_add_to_cart}}' class="btn btn-primary btn-md my-0 p" >
               Add to cart
               <i class="fas fa-shopping-cart ml-1"></i>
